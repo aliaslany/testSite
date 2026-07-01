@@ -1,0 +1,6 @@
+{
+  "name": "Personal Resume",
+  "description": "یک وب‌سایت رزومه شخصی با طراحی مینیمال و واکنش‌گرا",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
