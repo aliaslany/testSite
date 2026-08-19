@@ -24,7 +24,7 @@ const staggerContainer = {
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 py-12 px-4 sm:px-6 lg:px-8 font-sans selection:bg-blue-200">
-      <motion.div 
+      <motion.div
         className="max-w-3xl mx-auto space-y-8"
         initial="initial"
         animate="animate"
@@ -33,12 +33,12 @@ export default function App() {
         {/* Header / Profile */}
         <motion.header variants={fadeInUp} className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 text-center sm:text-right flex flex-col sm:flex-row items-center sm:items-start gap-6">
           <div className="w-32 h-32 rounded-full bg-slate-200 flex-shrink-0 overflow-hidden border-4 border-white shadow-md">
-             <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${resumeData.name}&backgroundColor=e2e8f0`} alt="Profile" className="w-full h-full object-cover" />
+            <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${resumeData.name}&backgroundColor=e2e8f0`} alt="Profile" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1">
             <h1 className="text-3xl font-bold text-slate-900">{resumeData.name}</h1>
             <p className="text-lg text-blue-600 font-medium mt-1">{resumeData.title}</p>
-            
+
             <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-4 text-sm text-slate-600">
               {resumeData.email && (
                 <a href={`mailto:${resumeData.email}`} className="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
@@ -59,16 +59,30 @@ export default function App() {
                 </span>
               )}
             </div>
-            
+
             <div className="mt-4 flex justify-center sm:justify-start gap-3">
               {resumeData.social.linkedin && (
-                <a href={resumeData.social.linkedin} target="_blank" rel="noreferrer" className="p-2 bg-slate-50 rounded-full text-slate-500 hover:text-blue-600 hover:bg-blue-50 transition-colors">
-                  <Linkedin className="w-5 h-5" />
+                <a
+                  href={resumeData.social.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn profile"
+                  title="LinkedIn"
+                  className="p-2 bg-slate-50 rounded-full text-slate-500 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" aria-hidden="true" />
                 </a>
               )}
               {resumeData.social.github && (
-                <a href={resumeData.social.github} target="_blank" rel="noreferrer" className="p-2 bg-slate-50 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors">
-                  <Github className="w-5 h-5" />
+                <a
+                  href={resumeData.social.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                  className="p-2 bg-slate-50 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors"
+                >
+                  <Github className="w-5 h-5" aria-hidden="true" />
                 </a>
               )}
             </div>
@@ -83,9 +97,7 @@ export default function App() {
             </div>
             <h2 className="text-xl font-bold text-slate-900">درباره من</h2>
           </div>
-          <p className="text-slate-600 leading-relaxed text-justify">
-            {resumeData.about}
-          </p>
+          <p className="text-slate-600 leading-relaxed text-justify">{resumeData.about}</p>
         </motion.section>
 
         {/* Experience */}
@@ -105,9 +117,7 @@ export default function App() {
                   <span className="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">{exp.period}</span>
                 </div>
                 <p className="text-blue-600 font-medium mb-3">{exp.company}</p>
-                <p className="text-slate-600 leading-relaxed text-sm text-justify">
-                  {exp.description}
-                </p>
+                <p className="text-slate-600 leading-relaxed text-sm text-justify">{exp.description}</p>
               </div>
             ))}
           </div>
@@ -144,8 +154,8 @@ export default function App() {
           </div>
           <div className="flex flex-wrap gap-2">
             {resumeData.skills.map((skill, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default"
               >
                 {skill}
@@ -153,7 +163,6 @@ export default function App() {
             ))}
           </div>
         </motion.section>
-
       </motion.div>
     </div>
   );
